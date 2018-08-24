@@ -57,17 +57,17 @@
 		</dependency>
 				
 		<!-- https://mvnrepository.com/artifact/com.google.firebase/firebase-database -->
-		<dependency>
+		<!-- <dependency>
 		    <groupId>com.google.firebase</groupId>
 		    <artifactId>firebase-database</artifactId>
 		    <version>16.0.1</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/com.google.firebase/firebase-core -->
+		https://mvnrepository.com/artifact/com.google.firebase/firebase-core
 			<dependency>
 			    <groupId>com.google.firebase</groupId>
 			    <artifactId>firebase-core</artifactId>
 			    <version>10.2.0</version>
-			</dependency>
+			</dependency> -->
 		
 		
 		
