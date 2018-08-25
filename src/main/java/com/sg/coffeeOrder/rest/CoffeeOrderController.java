@@ -1,4 +1,4 @@
-package com.sg.coffeeOrder.controller;
+package com.sg.coffeeOrder.rest;
 
 import java.util.Base64;
 
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.sg.coffeeOrder.model.StaffRegister;
 import com.sg.coffeeOrder.service.CoffeeOrderService;
 
@@ -20,9 +19,9 @@ import com.sg.coffeeOrder.service.CoffeeOrderService;
 @CrossOrigin
 @RestController
 @RequestMapping("/coffee")
-public class CoffeOrderController {
+public class CoffeeOrderController {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(CoffeOrderController.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CoffeeOrderController.class);
     
 	@Autowired
 	CoffeeOrderService coffeeOrderService;
@@ -42,11 +41,9 @@ public class CoffeOrderController {
 			String password = decoded.split(":")[1];
 			
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			LOGGER.debug(e.getMessage());
 		}
 		
-	//	ResponseEntity.status(200);
 	}
 	
 	@RequestMapping(value="/createUser" , method= RequestMethod.POST)

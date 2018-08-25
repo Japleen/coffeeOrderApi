@@ -2,39 +2,37 @@ package com.sg.coffeeOrder.service.impl;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import com.sg.coffeeOrder.model.StaffRegister;
 import com.sg.coffeeOrder.service.CoffeeOrderService;
-import com.sg.coffeeOrder.dao.CoffeeOrderDao; 
+import com.sg.coffeeOrder.dao.CoffeeOrderDao;
 
 public class CoffeeOrderServiceImpl implements CoffeeOrderService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(CoffeeOrderServiceImpl.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(CoffeeOrderServiceImpl.class);
 
 	public static final String SALT = "@!@%*@";
-	
+
 	@Autowired
 	CoffeeOrderDao coffeeOrderDao;
-	
+
 	@Override
 	public void createUser(StaffRegister staff) {
-		// TODO Auto-generated method stub
 		try {
 			String saltedPassword = SALT + staff.getPassword();
 			String hashedPassword = generateHash(saltedPassword);
 			staff.setPassword(hashedPassword);
-			
+			 coffeeOrderDao.createUser(staff);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			LOGGER.debug(e.getMessage());
 		}
-		
-		}
+
+	}
 	
+	@Override
 	public String generateHash(String input) {
 		StringBuilder hash = new StringBuilder();
 
@@ -53,6 +51,5 @@ public class CoffeeOrderServiceImpl implements CoffeeOrderService {
 
 		return hash.toString();
 	}
-
 
 }

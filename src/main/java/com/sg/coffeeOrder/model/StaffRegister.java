@@ -4,7 +4,6 @@ public class StaffRegister {
 	
 	private String firstName;
 	private String lastName;
-	//private String dob;
 	private String userName;
 	private String password;
 	
@@ -26,12 +25,7 @@ public class StaffRegister {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-//	public String getDob() {
-//		return dob;
-//	}
-//	public void setDob(String dob) {
-//		this.dob = dob;
-//	}
+
 	public String getUserName() {
 		return userName;
 	}
