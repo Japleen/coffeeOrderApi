@@ -2,10 +2,9 @@ package com.sg.coffeeOrder.dao.impl;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.stereotype.Component;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
@@ -14,12 +13,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.sg.coffeeOrder.dao.CoffeeOrderDao;
 import com.sg.coffeeOrder.model.StaffRegister;
 
+@Component
 public class CoffeeOrderDaoImpl implements CoffeeOrderDao {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(CoffeeOrderDao.class);
 
 	// @Value(value = "${app.serviceJsonPath}")
 	// private Resource serviceJson;
+
 	static int userCount = 0;
 
 	CoffeeOrderDaoImpl() {
